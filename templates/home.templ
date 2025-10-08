@@ -1,0 +1,18 @@
+package templates
+
+templ Home() {
+    <html>
+        <head>
+            <title>Daniel J. Manning</title>
+            <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+            <link rel="stylesheet" href="/assets/css/style.css">
+        </head>
+        <body>
+            <h1>Hello, I'm Daniel</h1>
+            <div hx-get="/about" hx-trigger="click" hx-target="#about" class="btn">
+                Load About Me
+            </div>
+            <div id="about"></div>
+        </body>
+    </html>
+}
