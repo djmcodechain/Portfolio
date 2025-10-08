@@ -1,7 +1,7 @@
 package main
 
 import (
-	"danieljmanning/api"
+	"danieljmanning/backend/api"
 	"net/http"
 )
 
