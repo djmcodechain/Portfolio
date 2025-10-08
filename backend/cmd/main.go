@@ -1,12 +1,12 @@
 package main
 
 import (
-	"danieljmanning/backend/api"
+	"danieljmanning/backend/handlers"
 	"net/http"
 )
 
 func main() {
-	http.HandleFunc("/", api.IndexHandler)
+	http.HandleFunc("/", handlers.IndexHandler)
 
 	// Serve Static Files
 	fs := http.FileServer(http.Dir("./assets"))
