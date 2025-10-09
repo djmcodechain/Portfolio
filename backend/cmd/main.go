@@ -1,8 +1,6 @@
 package main
 
 import (
-	// import packages
-	"danieljmanning/backend/handlers"
 	"net/http"
 )
 
@@ -10,8 +8,6 @@ import (
 // Author: Daniel J. Manning
 // GitHub: https://github.com/djmcodechain/Go-Portfolio
 func main() {
-	http.HandleFunc("/", handlers.IndexHandler)
-
 	// Serve Static Files
 	fs := http.FileServer(http.Dir("./assets"))
 	http.Handle("/assets/", http.StripPrefix("/assets/", fs))
