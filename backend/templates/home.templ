@@ -1,18 +1,27 @@
 package templates
 
+// Path: backend/cmd/main.go
+// Author: Daniel J. Manning
+// GitHub: https://github.com/djmcodechain/Go-Portfolio
 templ Home() {
-    <html>
-        <head>
-            <title>Daniel J. Manning</title>
-            <script src="https://unpkg.com/htmx.org@1.9.2"></script>
-            <link rel="stylesheet" href="/assets/css/style.css">
-        </head>
-        <body>
-            <h1>Hello, I'm Daniel</h1>
-            <div hx-get="/about" hx-trigger="click" hx-target="#about" class="btn">
-                Load About Me
-            </div>
-            <div id="about"></div>
-        </body>
-    </html>
+	<html>
+		<head>
+			<title>Daniel J. Manning</title>
+			<script src="https://unpkg.com/htmx.org@1.9.2"></script>
+			<link rel="stylesheet" href="/assets/css/style.css"/>
+		</head>
+		<body>
+			<h1>Hello, I'm Daniel</h1>
+			<div hx-get="/about" hx-trigger="click" hx-target="#about" class="btn">
+				Load About Me
+			</div>
+			<div id="about"></div>
+		</body>
+	</html>
 }
+
+// GNU Public
+// Copyright (c) 2025 Daniel J. Manning
+// Created: Sun, 05 Oct 2025
+//
+// License: GNU Public (See LICENSE file in repository)

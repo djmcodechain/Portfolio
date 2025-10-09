@@ -1,15 +1,14 @@
 package main
 
-// Path: backend/cmd/main.go
-// Author: Daniel J. Manning
-// GitHub: https://github.com/djmcodechain/Go-Portfolio
-
 import (
 	// import packages
 	"danieljmanning/backend/handlers"
 	"net/http"
 )
 
+// Path: backend/cmd/main.go
+// Author: Daniel J. Manning
+// GitHub: https://github.com/djmcodechain/Go-Portfolio
 func main() {
 	http.HandleFunc("/", handlers.IndexHandler)
 
