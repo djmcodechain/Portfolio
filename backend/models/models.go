@@ -3,25 +3,51 @@ package models
 // Path: backend/cmd/main.go
 // Author: Daniel J. Manning
 // GitHub: https://github.com/djmcodechain/Go-Portfolio
+
+type Project struct {
+	Name     string
+	Stack    string
+	Branding *Branding
+}
+
+type Branding struct {
+	Colours    *Colours
+	Typography *Typography
+}
+
+type Colours struct {
+	Primary   string
+	Secondary string
+	Accent    string
+	Links     string
+}
+
+type Typography struct {
+	Headings string
+	Body     string
+	Code     string
+	Links    string
+}
+
 type Metadata struct {
 	// The pages metadata
-	title       string
-	description string
-	canonical   string
-	index       string
-	cssLink     string
-	jsLink      string
+	Title       string
+	Description string
+	Canonical   string
+	Index       string
+	CSSlink     string
+	JSlink      string
 }
 
 type OpenGraphTags struct {
 	// The pages Open Graph metadata tags
-	locale         string
-	ogType         string
-	title          string
-	description    string
-	url            string
+	Locale         string
+	OGtype         string
+	Title          string
+	Description    string
+	URL            string
 	siteName       string
-	image          string
+	Image          string
 	imageSecureURL string
 }
 
