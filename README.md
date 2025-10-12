@@ -1,15 +1,20 @@
+# Portfolio djmcodechain
+## Project Snapshot
 
----
-
-   .___    __                         .___            .__           .__        
-  __| _/   |__| _____   ____  ____   __| _/____   ____ |  |__ _____  |__| ____  
- / __ |    |  |/     \_/ ___\/  _ \ / __ |/ __ \_/ ___\|  |  \\__  \ |  |/    \ 
-/ /_/ |    |  |  Y Y  \  \__(  <_> ) /_/ \  ___/\  \___|   Y  \/ __ \|  |   |  \
-\____ |/\__|  |__|_|  /\___  >____/\____ |\___  >\___  >___|  (____  /__|___|  /
-     \/\______|     \/     \/           \/    \/     \/     \/     \/        \/ 
-                                                [ P O R T F O L I O 0.v1.0 ]
-                                                [ djmcodechain ]
+```json
+{
+    "Author": "Daniel J. Manning",
+    "License": "GNU v3",
+    "Version": "0.v1.0",
+    "Author": "Daniel J. Manning",
+    "Tech": {
+        "Frontend": ["HTML", "HTMX", "CSS", "JS"],
+        "Backend": ["Go"],
+        "Infrastructure": ["Caddy", "SQLite3"]
+    },
+    "Status": "Active Development",
+    "URL": "https://github.com/djmcodechain/Go-Portfolio"
+}
+```
                                                                              
-Daniel J. Manning's Fullstack Developer Portfolio
-
----
+Daniel J. Manning's Fullstack Developer Portfolio Snapshot in JSON.
