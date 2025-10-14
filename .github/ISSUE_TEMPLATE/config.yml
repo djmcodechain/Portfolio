@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions & Support
+    url: https://github.com/djmcodechain/Portfolio/discussions
+    about: Use Discussions for general questions or ideas.
+  - name: Portfolio
+    url: https://djmcodechain.dev
+    about: Currently in development stages.

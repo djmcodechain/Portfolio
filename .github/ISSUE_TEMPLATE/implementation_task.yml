@@ -1,0 +1,81 @@
+name: ⚙️ Implementation Task
+description: For structured development tasks like creating handlers, models, or internal features
+labels: ["enhancement", "implementation"]
+title: "[Implementation] "
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🧭 Summary  
+        Describe what’s being implemented and why.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What’s the goal of this implementation?
+      placeholder: |
+        Implement the HTTP handlers that will power the core routes of the application. 
+        These handlers should connect incoming requests to the appropriate logic, 
+        render HTML templates (using the models created), and return proper HTTP responses 
+        with clean structure and error handling.
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 🎯 Details / Objectives  
+        Outline the specific steps, functions, or files that will be created or modified.
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details / Objectives
+      description: Describe the detailed objectives or technical approach.
+      placeholder: |
+        - Create dedicated handler functions for key routes (e.g., Home, About, Blog, Contact, etc.)
+        - Follow a clean structure: each handler should parse incoming data (if any), 
+          call necessary logic or services, and then render the response using HTML templates or models.
+        - Keep handler definitions organized in a dedicated package (e.g., internal/handlers)
+        - Add proper logging and error handling for graceful failure responses.
+        - Make sure handlers set appropriate status codes and headers.
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## ✅ Acceptance Criteria  
+        Define what success looks like — what conditions must be met for this task to be considered complete.
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Use checklist format for clarity.
+      placeholder: |
+        - [ ] Core route handlers implemented and registered with the router  
+        - [ ] Each handler returns valid HTML or JSON as appropriate  
+        - [ ] Errors are handled gracefully with proper status codes  
+        - [ ] Handlers are unit-testable and modular  
+        - [ ] Directory structure for handlers is clean and easy to navigate
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 📝 Additional Notes  
+        Any extra thoughts, considerations, or related issues.
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: Add context, future ideas, or follow-up tasks here.
+      placeholder: |
+        - Keep handlers lean — business logic should live in services, not handlers.
+        - Consider how middleware (e.g., auth, logging, recovery) will plug in.
+        - This is the backbone for routing, so consistency and clarity here will make future development smoother.

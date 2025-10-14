@@ -1,0 +1,95 @@
+name: 🐞 Bug Report
+description: Report something that isn’t working as expected
+labels: ["bug"]
+title: "[Bug] "
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🧭 Summary  
+        Briefly describe what went wrong.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What’s broken or behaving unexpectedly?
+      placeholder: e.g., The handler for /blog returns a 500 when no posts exist.
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## ⚙️ Steps to Reproduce  
+        Help others replicate the issue.
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: List all the steps needed to see the bug happen.
+      placeholder: |
+        1. Go to /blog
+        2. Remove all posts from the database
+        3. Refresh the page
+        4. Observe the error
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 🧩 Expected Behavior  
+        Describe what should have happened.
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen instead?
+      placeholder: e.g., It should return an empty blog page, not a 500 error.
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 🚨 Actual Behavior  
+        What actually happened?
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What did you observe instead of the expected behavior?
+      placeholder: e.g., Received HTTP 500 with stack trace output in logs.
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 🧪 Environment  
+        Provide context about where you saw the issue.
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Go version, browser, etc.
+      placeholder: e.g., Go 1.23, Ubuntu 22.04, Firefox 142
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 📝 Additional Notes  
+        Anything else that might help us understand the problem?
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: Logs, screenshots, related issues, or context.
+      placeholder: e.g., Stack trace snippet, log output, or link to related issue.

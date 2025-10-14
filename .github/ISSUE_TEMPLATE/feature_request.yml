@@ -1,0 +1,71 @@
+name: 🚀 Feature Request
+description: Propose a new feature, improvement, or addition to the project
+labels: ["enhancement"]
+title: "[Feature] "
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🧭 Summary  
+        Briefly describe the goal or purpose of this feature.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What do you want to build or improve? Keep it concise but clear.
+      placeholder: e.g., Implement new HTML models for templating, or Add route handlers for the main pages.
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 🎯 Details / Objectives  
+        Outline the key technical tasks, design goals, or implementation notes.
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details / Objectives
+      description: List the specific goals, design notes, or steps for this feature.
+      placeholder: |
+        - Define Go structs for HTML models
+        - Create handlers for routes
+        - Integrate with template rendering system
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## ✅ Acceptance Criteria  
+        Define what “done” looks like for this feature.
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Use checkboxes to specify when this issue can be considered complete.
+      placeholder: |
+        - [ ] Feature implemented and tested
+        - [ ] No runtime errors
+        - [ ] Clean and organized code structure
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 💡 Additional Notes  
+        Any context, thoughts, or future considerations.
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: Add any other info or future ideas.
+      placeholder: e.g., Consider integration with middleware later, or use this structure for all new handlers.
+    validations:
+      required: false
