@@ -1,0 +1,35 @@
+package templates
+
+import "danieljmanning/backend/models"
+import "danieljmanning/backend/templates/navigation"
+
+templ Layout(m *models.Metadata, o *models.OpenGraphTags, body templ.Component) {
+	<!DOCTYPE html>
+	<html lang="en_GB" style="margin: 0; padding: 0; box-sizing: border-box;">
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<!-- SEO Meta Tags: -->
+			<title>{ m.Title }</title>
+			<meta name="description" content={ m.Description }/>
+			<meta name="canonical" content={ m.Canonical }/>
+			<meta name="robots.txt" content={ m.Index }/>
+			<!-- Open Graph Protocol Tags: -->
+			<meta name="og:locale" content={ o.Locale }/>
+			<meta name="og:type" content={ o.OGtype }/>
+			<meta name="og:title" content={ o.Title }/>
+			<!-- TODO:
+                    Add this to ogTags struct in Go. HTML Blank for now.
+                    <meta name="og:description" content="{ m.Description }">
+            -->
+			<meta name="og:image" content=""/>
+		</head>
+		<body>
+			@navigation.Header()
+			<main>
+				@body()
+			</main>
+			@navigation.Footer()
+		</body>
+	</html>
+}
