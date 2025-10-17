@@ -1,0 +1,105 @@
+name: 📝 Start of Day (SOD)
+description: Daily work planning — context, priorities, and focus
+title: "SOD: YYYY-MM-DD"
+labels: ["daily", "planning"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🧠 Context
+        Provide a snapshot of your current state — mentally, physically, and environmentally.
+
+  - type: input
+    id: start_time
+    attributes:
+      label: 🕘 Start Time
+      description: When are you starting?
+      placeholder: e.g., 09:15
+
+  - type: textarea
+    id: mental_state
+    attributes:
+      label: ☕ Current Focus / Mental State
+      description: What’s your mental/emotional focus as you start?
+      placeholder: e.g., Hyperfocused on CLI work; mild anxiety; coffee onboard.
+    validations:
+      required: false
+
+  - type: textarea
+    id: physical_factors
+    attributes:
+      label: 🌡️ Physical / External Factors
+      description: Sleep, pain, distractions, environment, etc.
+      placeholder: e.g., Slept 5h; sinus pain 6/10; neighbour noise overnight.
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 🎯 Top Priorities for Today
+        List 2–4 key items. Keep it focused and achievable.
+
+  - type: textarea
+    id: top_priorities
+    attributes:
+      label: Top Priorities
+      description: Use the table or bullets — whatever’s fastest.
+      placeholder: |
+        | # | Task | Expected Outcome |
+        |---|------|------------------|
+        | 1 |      |                  |
+        | 2 |      |                  |
+        | 3 |      |                  |
+        | 4 |      |                  |
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 🔗 Related Issues / PRs
+
+  - type: textarea
+    id: related_issues
+    attributes:
+      label: Related Issues / PRs
+      description: Reference any related issues/PRs/discussions.
+      placeholder: "#123, #456"
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 📅 Planned Work Blocks (Optional)
+        Helps give structure to your day.
+
+  - type: textarea
+    id: work_blocks
+    attributes:
+      label: Planned Work Blocks
+      description: Timeboxing boosts focus; adjust as you go.
+      placeholder: |
+        | Time | Block Focus | Notes |
+        |------|-------------|-------|
+        | 10:00–11:30 |  |  |
+        | 12:00–14:00 |  |  |
+        | 15:00–17:00 |  |  |
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 🧭 General Notes
+
+  - type: textarea
+    id: general_notes
+    attributes:
+      label: General Notes
+      description: Environment setup, intentions, reminders, etc.
+      placeholder: e.g., Hydrate. Keep commits atomic. Ship something small early.
+    validations:
+      required: false
