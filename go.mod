@@ -1,4 +1,4 @@
-module danieljmanning
+module github.com/djmcodechain/Portfolio
 
 go 1.25
 
