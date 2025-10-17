@@ -5,11 +5,12 @@ package templates
 
 //lint:file-ignore SA4006 This context is only used if a nested component is present.
 
-import "github.com/a-h/templ"
-import templruntime "github.com/a-h/templ/runtime"
-
-import "danieljmanning/backend/models"
-import "danieljmanning/backend/templates/navigation"
+import (
+	"github.com/a-h/templ"
+	templruntime "github.com/a-h/templ/runtime"
+	"github.com/djmcodechain/Portfolio/backend/models"
+	"github.com/djmcodechain/Portfolio/backend/templates/navigation"
+)
 
 func Layout(m *models.Metadata, o *models.OpenGraphTags, body templ.Component) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
