@@ -4,6 +4,8 @@ import (
 	"net/http"
 
 	"github.com/djmcodechain/Portfolio/backend/models"
+	"github.com/djmcodechain/Portfolio/backend/templates"
+	"github.com/djmcodechain/Portfolio/backend/templates/views"
 )
 
 func MaintainenceHandler(w http.ResponseWriter, r *http.Request) {
@@ -14,7 +16,6 @@ func MaintainenceHandler(w http.ResponseWriter, r *http.Request) {
 		Index:       "index, follow",
 		CSSlink:     "frontend/assets/css/style.css",
 	}
-
 	ogTags := models.OpenGraphTags{
 		Locale:      "en_GB",
 		OGtype:      "website",
@@ -22,4 +23,6 @@ func MaintainenceHandler(w http.ResponseWriter, r *http.Request) {
 		Description: meta.Description,
 		URL:         meta.Canonical,
 	}
+	body := views.Maintenance()
+	templates.Layout(meta, ogTags, body)
 }
