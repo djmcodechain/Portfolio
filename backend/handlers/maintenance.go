@@ -15,7 +15,7 @@ func MaintainenceHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	ogTags := models.OpenGraphTags{
-		Locale:      "GB-en",
+		Locale:      "en_GB",
 		OGtype:      "website",
 		Title:       meta.Title,
 		Description: meta.Description,
