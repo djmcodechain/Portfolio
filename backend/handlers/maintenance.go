@@ -24,5 +24,9 @@ func MaintainenceHandler(w http.ResponseWriter, r *http.Request) {
 		URL:         meta.Canonical,
 	}
 	body := views.Maintenance()
-	templates.Layout(meta, ogTags, body)
+	layout := templates.Layout(&meta, &ogTags, body)
+
+	if err := layout.Render(r.Context(), w); err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
 }
