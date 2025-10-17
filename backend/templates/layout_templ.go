@@ -135,7 +135,7 @@ func Layout(m *models.Metadata, o *models.OpenGraphTags, body templ.Component) t
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = body().Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = body.Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
