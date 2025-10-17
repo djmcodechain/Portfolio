@@ -6,7 +6,7 @@ import (
 
 // Path: backend/cmd/main.go
 // Author: Daniel J. Manning
-// GitHub: https://github.com/djmcodechain/Go-Portfolio
+// GitHub: https://github.com/djmcodechain/Portfolio
 func main() {
 	// Serve Static Files
 	fs := http.FileServer(http.Dir("./assets"))

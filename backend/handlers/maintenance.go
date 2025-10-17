@@ -1,5 +1,9 @@
 package handlers
 
+// Path: backend/handlers/maintenance.go
+// Author: Daniel J. Manning
+// GitHub: https://github.com/djmcodechain/Portfolio
+
 import (
 	"net/http"
 
@@ -30,3 +34,9 @@ func MaintainenceHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }
+
+// GNU Public
+// Copyright (c) 2025 Daniel J. Manning
+// Created: Sun, 18 Oct 2025
+//
+// License: GNU Public (See LICENSE file in repository)
