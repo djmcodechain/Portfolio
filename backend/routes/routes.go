@@ -6,8 +6,9 @@ package routes
 
 import (
 	// import packages
-	"danieljmanning/backend/handlers"
 	"net/http"
+
+	"github.com/djmcodechain/Portfolio/backend/handlers"
 )
 
 func Routes() *http.ServeMux {
