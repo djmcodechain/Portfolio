@@ -1,7 +1,16 @@
 package handlers
 
-import "net/http"
+import (
+	"danieljmanning/backend/models"
+	"net/http"
+)
 
 func MaintainenceHandler(w http.ResponseWriter, r *http.Request) {
-
+	meta := models.Metadata{
+		Title:       "djmcodechain [Under Maintenance]",
+		Description: "djmcodechain is currently under some development.",
+		Canonical:   "djmcodechain.dev/",
+		Index:       "index",
+		CSSlink:     "frontend/assets/css/style.css",
+	}
 }
