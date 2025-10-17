@@ -4,7 +4,7 @@ go 1.25
 
 tool github.com/a-h/templ/cmd/templ
 
-require github.com/a-h/templ v0.3.943 // indirect
+require github.com/a-h/templ v0.3.960 // indirect
 
 require (
 	github.com/a-h/parse v0.0.0-20250122154542-74294addb73e // indirect
