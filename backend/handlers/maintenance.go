@@ -10,7 +10,7 @@ func MaintainenceHandler(w http.ResponseWriter, r *http.Request) {
 		Title:       "djmcodechain [Under Maintenance]",
 		Description: "djmcodechain is currently under some development.",
 		Canonical:   "djmcodechain.dev/",
-		Index:       "index",
+		Index:       "index, follow",
 		CSSlink:     "frontend/assets/css/style.css",
 	}
 
