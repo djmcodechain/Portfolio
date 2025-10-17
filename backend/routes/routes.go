@@ -1,8 +1,8 @@
 package routes
 
-// Path: backend/cmd/main.go
+// Path: backend/routes/routes.go
 // Author: Daniel J. Manning
-// GitHub: https://github.com/djmcodechain/Go-Portfolio
+// GitHub: https://github.com/djmcodechain/Portfolio
 
 import (
 	// import packages

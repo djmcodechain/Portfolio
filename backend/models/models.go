@@ -1,8 +1,8 @@
 package models
 
-// Path: backend/cmd/main.go
+// Path: backend/models/models.go
 // Author: Daniel J. Manning
-// GitHub: https://github.com/djmcodechain/Go-Portfolio
+// GitHub: https://github.com/djmcodechain/Portfolio
 
 type Project struct {
 	Name     string

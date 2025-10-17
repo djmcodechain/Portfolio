@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-// Path: backend/cmd/main.go
+// Path: backend/handlers/index.go
 // Author: Daniel J. Manning
 // GitHub: https://github.com/djmcodechain/Portfolio
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
