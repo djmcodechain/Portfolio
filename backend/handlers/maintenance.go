@@ -1,8 +1,9 @@
 package handlers
 
 import (
-	"danieljmanning/backend/models"
 	"net/http"
+
+	"github.com/djmcodechain/Portfolio/backend/models"
 )
 
 func MaintainenceHandler(w http.ResponseWriter, r *http.Request) {
