@@ -21,7 +21,7 @@ func Routes() *http.ServeMux {
 	// The routes to pages
 	siteMode := os.Getenv("SITE_MODE")
 	switch strings.ToLower(siteMode) {
-	case "dev", "devMode":
+	case "dev", "devmode":
 		Mux.HandleFunc("/", handlers.MaintainenceHandler)
 	case "live":
 		Mux.HandleFunc("/", handlers.IndexHandler)
