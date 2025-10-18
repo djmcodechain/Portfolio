@@ -13,7 +13,7 @@
         "Infrastructure": ["Caddy", "SQLite3"]
     },
     "Status": "Active Development",
-    "URL": "https://github.com/djmcodechain/Go-Portfolio"
+    "URL": "https://github.com/djmcodechain/Portfolio"
 }
 ```
                                                                              
