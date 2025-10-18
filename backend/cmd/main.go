@@ -9,7 +9,7 @@ import (
 // GitHub: https://github.com/djmcodechain/Portfolio
 func main() {
 	// Serve Static Files
-	fs := http.FileServer(http.Dir("./assets"))
+	fs := http.FileServer(http.Dir("../../frontend/assets"))
 	http.Handle("/assets/", http.StripPrefix("/assets/", fs))
 
 	println("Listening on http://localhost:8080")
