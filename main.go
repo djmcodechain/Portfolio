@@ -1,9 +1,11 @@
 package main
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/djmcodechain/Portfolio/backend/logging"
+	"github.com/djmcodechain/Portfolio/backend/routes"
 )
 
 // Path: backend/cmd/main.go
@@ -11,12 +13,16 @@ import (
 // GitHub: https://github.com/djmcodechain/Portfolio
 func main() {
 	defer logging.Logger.Info("main() ~ called")
-	// Serve Static Files
-	fs := http.FileServer(http.Dir("../../frontend/assets"))
-	http.Handle("/assets/", http.StripPrefix("/assets/", fs))
+	mux := routes.Routes()
 
-	println("Listening on http://localhost:8080")
-	http.ListenAndServe(":8080", nil)
+	fs := http.FileServer(http.Dir("frontend/assets"))
+	mux.Handle("/assets/", http.StripPrefix("/assets/", fs))
+
+	addr := ":8080"
+	logging.Logger.Info("HTTP server starting", "addr", addr)
+	if err := http.ListenAndServe(addr, mux); err != nil {
+		log.Fatalf("failed to start HTTP server: %v", err)
+	}
 }
 
 // GNU Public

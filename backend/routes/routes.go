@@ -6,7 +6,6 @@ package routes
 
 import (
 	// import packages
-	"log"
 	"net/http"
 	"os"
 	"strings"
@@ -23,12 +22,16 @@ func Routes() *http.ServeMux {
 	// The routes to pages
 	siteMode := os.Getenv("SITE_MODE")
 	switch strings.ToLower(siteMode) {
-	case "dev", "devmode":
+	case "dev", "devmode", "":
+		if siteMode == "" {
+			logging.Logger.Warn("SITE_MODE not set, defaulting to maintenance mode")
+		}
 		Mux.HandleFunc("/", handlers.MaintainenceHandler)
 	case "live":
 		Mux.HandleFunc("/", handlers.IndexHandler)
 	default:
-		log.Fatalf("Error: Unknown SITE_MODE '%s'. Expected 'dev' or 'live'.", siteMode)
+		logging.Logger.Warn("Unknown SITE_MODE, defaulting to maintenance mode", "site_mode", siteMode)
+		Mux.HandleFunc("/", handlers.MaintainenceHandler)
 	}
 
 	// Return Mux to allow it to be served in main.go
