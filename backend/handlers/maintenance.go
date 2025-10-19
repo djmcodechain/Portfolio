@@ -7,12 +7,14 @@ package handlers
 import (
 	"net/http"
 
+	"github.com/djmcodechain/Portfolio/backend/logging"
 	"github.com/djmcodechain/Portfolio/backend/models"
 	"github.com/djmcodechain/Portfolio/backend/templates"
 	"github.com/djmcodechain/Portfolio/backend/templates/views"
 )
 
 func MaintainenceHandler(w http.ResponseWriter, r *http.Request) {
+	defer logging.Logger.Info("MaintainenceHandler() ~ Called")
 	meta := models.Metadata{
 		Title:       "djmcodechain [Under Maintenance]",
 		Description: "djmcodechain is currently under some development.",
