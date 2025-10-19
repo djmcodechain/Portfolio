@@ -12,9 +12,11 @@ import (
 	"strings"
 
 	"github.com/djmcodechain/Portfolio/backend/handlers"
+	"github.com/djmcodechain/Portfolio/backend/logging"
 )
 
 func Routes() *http.ServeMux {
+	defer logging.Logger.Info("Routes() ~ called")
 	// Create a new Mux
 	var Mux = http.NewServeMux()
 
