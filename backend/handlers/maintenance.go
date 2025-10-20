@@ -29,7 +29,7 @@ func MaintainenceHandler(w http.ResponseWriter, r *http.Request) {
 		Description: meta.Description,
 		URL:         meta.Canonical,
 	}
-	body := views.Maintenance()
+	body := views.MaintenanceBody()
 	layout := templates.Layout(&meta, &ogTags, body)
 
 	if err := layout.Render(r.Context(), w); err != nil {
