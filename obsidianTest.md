@@ -1,1 +1,0 @@
-This is just to test Obsidian.md, see the [LICENSE](LICENSE) 
