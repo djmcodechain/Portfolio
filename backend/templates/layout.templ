@@ -18,6 +18,7 @@ templ Layout(m *models.Metadata, o *models.OpenGraphTags, body templ.Component) 
 			<meta name="description" content={ m.Description }/>
 			<meta name="canonical" content={ m.Canonical }/>
 			<meta name="robots.txt" content={ m.Index }/>
+			<link rel="stylesheet" href={ m.CSSlink }/>
 			<!-- Open Graph Protocol Tags: -->
 			<meta name="og:locale" content={ o.Locale }/>
 			<meta name="og:type" content={ o.OGtype }/>
