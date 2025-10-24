@@ -23,7 +23,7 @@ templ Layout(m *models.Metadata, o *models.OpenGraphTags, body templ.Component) 
 			<meta name="og:type" content={ o.OGtype }/>
 			<meta name="og:title" content={ o.Title }/>
 			<meta name="og:description" content={ o.Description }/>
-			<meta name="og:image" content=""/>
+			<meta name="og:image" content={ o.Image }/>
 		</head>
 		<body>
 			@navigation.Header()
