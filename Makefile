@@ -1,4 +1,5 @@
 build:
+	@templ generate
 	@go test
 	@go clean
 	@go vet
