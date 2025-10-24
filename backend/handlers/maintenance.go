@@ -10,7 +10,7 @@ import (
 	"github.com/djmcodechain/Portfolio/backend/logging"
 	"github.com/djmcodechain/Portfolio/backend/models"
 	"github.com/djmcodechain/Portfolio/backend/templates"
-	"github.com/djmcodechain/Portfolio/backend/templates/views"
+	"github.com/djmcodechain/Portfolio/backend/templates/views/main"
 )
 
 func MaintainenceHandler(w http.ResponseWriter, r *http.Request) {
