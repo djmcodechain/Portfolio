@@ -1,0 +1,41 @@
+/* 
+ * Path: frontend/assets/scss/_base.scss
+ * Author: Daniel J. Manning
+ * GitHub: https://github.com/djmcodechain/Portfolio
+*/
+
+/* HSL Colour's */
+$color-dark: hsl(0, 0%, 13%);        /* #222222 - dark base / background */
+$color-light: hsl(0, 0%, 100%);      /* #FFFFFF - light text / background */
+$color-primary: hsl(233, 18%, 36%);  /* #4B4E6D - blue-gray brand color */
+$color-accent: hsl(166, 53%, 69%);   /* #84DCC6 - mint accent */
+$color-secondary: hsl(213, 15%, 64%); /* #95A3B3 - muted gray */
+
+/* Semantic Roles */
+$color-bg: $color-dark;
+$color-fg: $color-light;
+$color-border: hsl(213, 10%, 45%);
+$color-hover: hsl(166, 53%, 60%);
+$color-muted: hsl(213, 10%, 35%);
+
+/* CSS Custom Properties (for dynamic theming) */
+:root {
+  --color-dark: #{$color-dark};
+  --color-light: #{$color-light};
+  --color-primary: #{$color-primary};
+  --color-accent: #{$color-accent};
+  --color-secondary: #{$color-secondary};
+  --color-bg: #{$color-bg};
+  --color-fg: #{$color-fg};
+  --color-border: #{$color-border};
+  --color-hover: #{$color-hover};
+  --color-muted: #{$color-muted};
+}
+
+/*
+ * GNU Public
+ * Copyright (c) 2025 Daniel J. Manning
+ * Created: Sun, 05 Oct 2025
+ *
+ * License: GNU Public (See LICENSE file in repository)
+*/
