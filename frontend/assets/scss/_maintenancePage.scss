@@ -1,0 +1,24 @@
+/* 
+ * Path: frontend/assets/scss/_base.scss
+ * Author: Daniel J. Manning
+ * GitHub: https://github.com/djmcodechain/Portfolio
+*/
+@import 'base';
+main maintenance-information {
+    h1 {
+        font-size: 2rem;
+    }
+    a {
+        text-decoration: none;
+    }
+    &a:hover {
+        color: var(base.$color-muted);
+    }
+}
+/*
+ * GNU Public
+ * Copyright (c) 2025 Daniel J. Manning
+ * Created: Sun, 05 Oct 2025
+ *
+ * License: GNU Public (See LICENSE file in repository)
+*/
