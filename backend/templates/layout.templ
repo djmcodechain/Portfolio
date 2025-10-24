@@ -22,10 +22,7 @@ templ Layout(m *models.Metadata, o *models.OpenGraphTags, body templ.Component) 
 			<meta name="og:locale" content={ o.Locale }/>
 			<meta name="og:type" content={ o.OGtype }/>
 			<meta name="og:title" content={ o.Title }/>
-			<!-- TODO:
-                    Add this to ogTags struct in Go. HTML Blank for now.
-                    <meta name="og:description" content="{ m.Description }">
-            -->
+			<meta name="og:description" content={ o.Description }/>
 			<meta name="og:image" content=""/>
 		</head>
 		<body>
