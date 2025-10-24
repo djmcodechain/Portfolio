@@ -11,17 +11,10 @@
 /* #95A3B3 - muted gray */
 /* Semantic Roles */
 /* CSS Custom Properties (for dynamic theming) */
-:root {
-  --color-dark: #212121;
-  --color-light: white;
-  --color-primary: #4b4f6c;
-  --color-accent: #86dac6;
-  --color-secondary: #95a2b1;
-  --color-bg: #212121;
-  --color-fg: white;
-  --color-border: #67727e;
-  --color-hover: #63cfb6;
-  --color-muted: #505862; }
+@use "colours" as *;
+@use "layout" as *;
+@use "funcs" as *;
+@use "maintenance" as *;
 
 /* Reset + Base Styles */
 *,
