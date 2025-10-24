@@ -8,6 +8,9 @@ package navigation
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
+// Path: backend/templates/navigation/header.templ
+// Author: Daniel J. Manning
+// GitHub: https://github.com/djmcodechain/Portfolio
 func Header() templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
@@ -33,4 +36,9 @@ func Header() templ.Component {
 	})
 }
 
+// GNU Public
+// Copyright (c) 2025 Daniel J. Manning
+// Created: Sun, 05 Oct 2025
+//
+// License: GNU Public (See LICENSE file in repository)
 var _ = templruntime.GeneratedTemplate

@@ -8,6 +8,9 @@ package views
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
+// Path: backend/handlers/maintenanceBody.templ
+// Author: Daniel J. Manning
+// GitHub: https://github.com/djmcodechain/Portfolio
 func MaintenanceBody() templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
@@ -29,7 +32,7 @@ func MaintenanceBody() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<p>This site is under Maintenance</p>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<maintenance-information><h1>This site is under Maintenance</h1><ul><li><a href=\"https://github.com/djmcodechain\">View my GitHub</a></li></ul></maintenance-information>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -37,4 +40,9 @@ func MaintenanceBody() templ.Component {
 	})
 }
 
+// GNU Public
+// Copyright (c) 2025 Daniel J. Manning
+// Created: Sun, 05 Oct 2025
+//
+// License: GNU Public (See LICENSE file in repository)
 var _ = templruntime.GeneratedTemplate

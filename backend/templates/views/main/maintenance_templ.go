@@ -5,11 +5,14 @@ package views
 
 //lint:file-ignore SA4006 This context is only used if a nested component is present.
 
-import (
-	"github.com/a-h/templ"
-	templruntime "github.com/a-h/templ/runtime"
-	"github.com/djmcodechain/Portfolio/backend/models"
-)
+import "github.com/a-h/templ"
+import templruntime "github.com/a-h/templ/runtime"
+
+import "github.com/djmcodechain/Portfolio/backend/models"
+
+// Path: backend/handlers/maintenance.templ
+// Author: Daniel J. Manning
+// GitHub: https://github.com/djmcodechain/Portfolio
 
 var meta *models.Metadata
 var og *models.OpenGraphTags
@@ -39,4 +42,9 @@ func Maintenance() templ.Component {
 	})
 }
 
+// GNU Public
+// Copyright (c) 2025 Daniel J. Manning
+// Created: Sun, 05 Oct 2025
+//
+// License: GNU Public (See LICENSE file in repository)
 var _ = templruntime.GeneratedTemplate
