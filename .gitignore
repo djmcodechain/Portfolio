@@ -7,6 +7,7 @@
 *.dll
 *.so
 *.dylib
+fly.toml
 
 # Test binary, built with `go test -c`
 *.test
