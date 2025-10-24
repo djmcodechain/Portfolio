@@ -1,19 +1,47 @@
-/*
-    * Path: frontend/assets/css/style.css
-    * Author: Daniel J. Manning
-    * GitHub: https://github.com/djmcodechain/Portfolio
-*/
-
 /* 
-
-.code { 
-    PLACEHOLDER
-}
-    
+ * Path: frontend/assets/scss/_base.scss
+ * Author: Daniel J. Manning
+ * GitHub: https://github.com/djmcodechain/Portfolio
 */
+/* HSL Colour's */
+/* #222222 - dark base / background */
+/* #FFFFFF - light text / background */
+/* #4B4E6D - blue-gray brand color */
+/* #84DCC6 - mint accent */
+/* #95A3B3 - muted gray */
+/* Semantic Roles */
+/* CSS Custom Properties (for dynamic theming) */
+:root {
+  --color-dark: #212121;
+  --color-light: white;
+  --color-primary: #4b4f6c;
+  --color-accent: #86dac6;
+  --color-secondary: #95a2b1;
+  --color-bg: #212121;
+  --color-fg: white;
+  --color-border: #67727e;
+  --color-hover: #63cfb6;
+  --color-muted: #505862; }
 
-/*  GNU Public
-    * Copyright (c) 2025 Daniel J. Manning
-    * Created: Sun, 05 Oct 2025
-    * License: GNU Public (See LICENSE file in repository)
+/* Reset + Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px; }
+
+/*
+ * GNU Public
+ * Copyright (c) 2025 Daniel J. Manning
+ * Created: Sun, 05 Oct 2025
+ *
+ * License: GNU Public (See LICENSE file in repository)
 */
+/*# sourceMappingURL=main.scss.map */
+
+/*# sourceMappingURL=style.css.map */
