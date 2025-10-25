@@ -10,9 +10,9 @@ main maintenance-information {
     }
     a {
         text-decoration: none;
-    }
-    &a:hover {
+        &:hover {
         color: var(base.$color-muted);
+    }
     }
 }
 /*
