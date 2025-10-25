@@ -10,7 +10,7 @@ import (
 	"github.com/djmcodechain/Portfolio/backend/logging"
 	"github.com/djmcodechain/Portfolio/backend/models"
 	"github.com/djmcodechain/Portfolio/backend/templates"
-	"github.com/djmcodechain/Portfolio/backend/templates/views/main"
+	views "github.com/djmcodechain/Portfolio/backend/templates/views/main"
 )
 
 func MaintainenceHandler(w http.ResponseWriter, r *http.Request) {
@@ -20,7 +20,7 @@ func MaintainenceHandler(w http.ResponseWriter, r *http.Request) {
 		Description: "djmcodechain is currently under some development.",
 		Canonical:   "djmcodechain.dev/",
 		Index:       "index, follow",
-		CSSlink:     "frontend/assets/css/style.css",
+		CSSlink:     "assets/css/style.css",
 	}
 	ogTags := models.OpenGraphTags{
 		Locale:      "en_GB",

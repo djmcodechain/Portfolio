@@ -5,7 +5,7 @@
 
 APP_NAME := djmcodechain
 GO_FILES := $(shell find . -type f -name '*.go' -not -path "./frontend/*")
-SCSS_INPUT := ./frontend/assets/scss/main.scss
+SCSS_INPUT := ./frontend/scss/main.scss
 CSS_OUTPUT := ./frontend/css/output.css
 TEMPL_DIR := ./frontend/templates
 BUILD_DIR := ./dist
