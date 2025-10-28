@@ -15,13 +15,13 @@ GO_SRC := ./cmd
 GO_BIN := ./bin/app
 GO_FILES := $(shell find . -type f -name '*.go' -not -path "./frontend/*")
 
-CSS_DIR := frontend/public/styles/partials
-CSS_OUTPUT := frontend/public/styles/main.css
-CSS_MIN := frontend/public/styles/min.main.css
+CSS_DIR := frontend/styles/partials
+CSS_OUTPUT := frontend/styles/style.css
+CSS_MIN := frontend/styles/min.style.css
 
-JS_DIR := frontend/public/scripts/partials
-JS_OUTPUT := frontend/public/scripts/main.js
-JS_MIN := frontend/public/scripts/min.main.js
+JS_DIR := frontend/scripts/partials
+JS_OUTPUT := frontend/scripts/script.js
+JS_MIN := frontend/scripts/min.script.js
 
 HTML_DIR := frontend/public
 HTML_OUTPUT := frontend/public/index.html
@@ -29,9 +29,6 @@ HTML_MIN := frontend/public/min.index.html
 
 TEMPL_DIR := ./frontend/templates
 BUILD_DIR := ./dist
-
-SCSS_INPUT := ./frontend/scss/main.scss
-SCSS_OUTPUT := ./frontend/css/output.css
 
 .PHONY: all build run dev dev-all templ scss tidy clean \
         build-css minify-css build-js minify-js minify-html \
@@ -117,10 +114,6 @@ build-go:
 # ============================================
 # 💻 Development Environment
 # ============================================
-scss:
-	@echo "🎨 Watching SCSS for changes..."
-	sass --watch $(SCSS_INPUT):$(SCSS_OUTPUT)
-
 dev:
 	@echo "🧠 Starting live reload with Air..."
 	air
