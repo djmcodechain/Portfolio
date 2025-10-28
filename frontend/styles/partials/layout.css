@@ -1,0 +1,14 @@
+@layer layout {
+
+    h1,
+    h2,
+    h3 {
+        color: var(--slate-blue);
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--accent-secondary);
+    }
+
+}
