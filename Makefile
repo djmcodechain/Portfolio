@@ -1,23 +1,46 @@
 # ============================================
-# DJMCodeChain Makefile ⚙️
-# Stack: Go + HTMX + Templ + SCSS + Fly.io
+# ⚙️ DJMCodeChain Makefile
+# Stack: Go + HTMX + Templ + CSS + Fly.io
+# ============================================
+# Author: Daniel J. Manning
+# Website: https://djmcodechain.dev
 # ============================================
 
 APP_NAME := djmcodechain
+
+# ─────────────────────────────────────────────
+# 🧱 Paths
+# ─────────────────────────────────────────────
+GO_SRC := ./cmd
+GO_BIN := ./bin/app
 GO_FILES := $(shell find . -type f -name '*.go' -not -path "./frontend/*")
-SCSS_INPUT := ./frontend/scss/main.scss
-CSS_OUTPUT := ./frontend/css/output.css
+
+CSS_DIR := frontend/public/styles/partials
+CSS_OUTPUT := frontend/public/styles/main.css
+CSS_MIN := frontend/public/styles/min.main.css
+
+JS_DIR := frontend/public/scripts/partials
+JS_OUTPUT := frontend/public/scripts/main.js
+JS_MIN := frontend/public/scripts/min.main.js
+
+HTML_DIR := frontend/public
+HTML_OUTPUT := frontend/public/index.html
+HTML_MIN := frontend/public/min.index.html
+
 TEMPL_DIR := ./frontend/templates
 BUILD_DIR := ./dist
 
-.PHONY: all build run dev templ scss tidy clean fly-deploy fly-status fly-logs
+SCSS_INPUT := ./frontend/scss/main.scss
+SCSS_OUTPUT := ./frontend/css/output.css
+
+.PHONY: all build run dev dev-all templ scss tidy clean \
+        build-css minify-css build-js minify-js minify-html \
+        build-go build-all minify-all fly-deploy fly-status fly-logs
 
 # ============================================
-# 🧱 Build Commands
+# 🧩 Core Build Commands
 # ============================================
-
-# Build everything for production
-all: tidy scss templ build
+all: tidy build-all minify-all
 
 build:
 	@echo "🔨 Building Go app..."
@@ -28,49 +51,104 @@ run:
 	@echo "🚀 Starting app..."
 	./app
 
+tidy:
+	@echo "🧾 Tidying Go modules..."
+	go mod tidy
+
 # ============================================
-# 🧩 Development Commands
+# 🎨 Frontend Tasks (CSS, JS, HTML)
 # ============================================
 
-# Watch Templ templates
+# 🧱 CSS
+build-css:
+	@echo "🧩 Building readable main.css..."
+	@cat $(CSS_DIR)/header.css \
+	    $(filter-out $(CSS_DIR)/header.css $(CSS_DIR)/footer.css, $(wildcard $(CSS_DIR)/*.css)) \
+	    $(CSS_DIR)/footer.css \
+	    > $(CSS_OUTPUT)
+	@echo "✅ main.css built in correct order!"
+
+minify-css: build-css
+	@echo "⚙️  Minifying CSS → $(CSS_MIN)..."
+	@sed '/\/\*/{:a; /\*\//!{N;ba}; s/\/\*.*\*\///g}' $(CSS_OUTPUT) \
+	| tr -d '\n\t' \
+	| sed 's/  */ /g; s/ *{/{/g; s/ *}/}/g; s/ *:/:/g; s/ *,/,/g; s/ *; */;/g' \
+	> $(CSS_MIN)
+	@echo "✅ min.main.css ready!"
+
+# 🧠 JS
+build-js:
+	@echo "🧩 Building readable main.js..."
+	@cat $(JS_DIR)/*.js > $(JS_OUTPUT)
+	@echo "✅ main.js built!"
+
+minify-js: build-js
+	@echo "⚙️  Minifying JS → $(JS_MIN)..."
+	@sed '/\/\//d;/\/\*/,/\*\//d' $(JS_OUTPUT) \
+	| tr -d '\n\t' \
+	| sed 's/  */ /g' \
+	> $(JS_MIN)
+	@echo "✅ min.main.js ready!"
+
+# 💎 HTML
+minify-html:
+	@echo "⚙️  Minifying HTML → $(HTML_MIN)..."
+	@sed '/<!--/,/-->/d' $(HTML_OUTPUT) \
+	| tr -d '\n\t' \
+	| sed 's/  */ /g' \
+	> $(HTML_MIN)
+	@echo "✅ min.index.html ready!"
+
+# ============================================
+# 🔨 Go Build + Templ
+# ============================================
 templ:
 	@echo "📦 Watching Templ templates..."
 	templ generate --watch
 
-# Watch SCSS -> CSS
+build-go:
+	@echo "⚙️ Generating templ files..."
+	@templ generate
+	@echo "🚀 Building Go binaries..."
+	@go mod tidy
+	@go build -o $(GO_BIN) $(GO_SRC)
+	@echo "✅ Go build complete!"
+
+# ============================================
+# 💻 Development Environment
+# ============================================
 scss:
 	@echo "🎨 Watching SCSS for changes..."
-	sass --watch $(SCSS_INPUT):$(CSS_OUTPUT)
+	sass --watch $(SCSS_INPUT):$(SCSS_OUTPUT)
 
-# Start Air (live reload for Go)
 dev:
 	@echo "🧠 Starting live reload with Air..."
 	air
 
-# Run everything together (SCSS + Templ + Go)
 dev-all:
 	@echo "💻 Launching full GOTTH dev environment..."
 	$(MAKE) -j3 scss templ dev
 
 # ============================================
-# 🧹 Utility Commands
+# 🧹 Clean + Bundle Tasks
 # ============================================
+build-all: build-go build-css build-js
+	@echo "🏗️  All assets built!"
 
-tidy:
-	@echo "🧾 Tidying modules..."
-	go mod tidy
+minify-all: minify-css minify-js minify-html
+	@echo "✨ All files minified!"
 
 clean:
-	@echo "🧼 Cleaning up build artifacts..."
-	rm -f app
-	rm -rf $(BUILD_DIR)
+	@echo "🧼 Cleaning up build outputs..."
+	@rm -f app $(CSS_OUTPUT) $(CSS_MIN) $(JS_OUTPUT) $(JS_MIN) $(HTML_MIN) $(GO_BIN)
+	@rm -rf $(BUILD_DIR)
+	@echo "✅ Clean complete!"
 
 # ============================================
-# ☁️ Deployment Commands
+# ☁️ Fly.io Deployment
 # ============================================
-
 fly-deploy:
-	@echo "🚀 Deploying to Fly.io..."
+	@echo "🚀 Deploying $(APP_NAME) to Fly.io..."
 	flyctl deploy --no-cache
 
 fly-status:
