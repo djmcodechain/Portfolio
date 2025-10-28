@@ -1,0 +1,30 @@
+@layer root {
+    :root {
+
+        /* Backgrounds, Headers, Dark UI */
+        --primary: #000415;
+
+        /* Buttons, Focus, Rings, Icons, CTAs */
+        --accent-highlight: #FEE715;
+
+        /* Data highlights, link hovers */
+        --accent-secondary: #00FFC6;
+
+        /* Surface cards, modals, elevated backgrounds */
+        --steel-grey: #1C1F2B;
+
+        /* Secondary Text, Icons, Outlines */
+        --slate-blue: #4B4E6D;
+
+        /* Borders, Subtle Dividers */
+        --ghost-grey: #BFC2D5;
+
+        /* Main text on dark UI */
+        --pure-white: #FFFFFF;
+
+        /* Calmer tone */
+        --royal-blue: #0048FF;
+
+        --signal-error: #FF355E;
+    }
+}
