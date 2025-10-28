@@ -1,0 +1,8 @@
+@layer flexCentre {
+    .flex-centre {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: var(--p2);
+    }
+}
