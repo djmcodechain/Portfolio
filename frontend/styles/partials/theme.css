@@ -1,0 +1,14 @@
+@layer layout {
+    body {
+
+        &[theme="darkMode"] {
+            background: var(--primary);
+            color: var(--pure-white);
+        }
+
+        &[theme="lightMode"] {
+            background: var(--pure-white);
+            color: var(--primary);
+        }
+    }
+}
