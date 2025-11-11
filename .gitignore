@@ -35,3 +35,8 @@ go.work.sum
 # .vscode/
 .obsidian
 .air.toml
+
+# Database Files
+*.db
+*.db-shm
+*.db-wal
