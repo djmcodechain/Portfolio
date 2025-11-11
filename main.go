@@ -15,7 +15,7 @@ func main() {
 	defer logging.Logger.Info("main() ~ called")
 	mux := routes.Routes()
 
-	fs := http.FileServer(http.Dir("frontend/assets"))
+	fs := http.FileServer(http.Dir("/assets/"))
 	mux.Handle("/assets/", http.StripPrefix("/assets/", fs))
 
 	addr := ":8080"
