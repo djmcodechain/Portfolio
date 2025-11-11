@@ -30,7 +30,7 @@ func main() {
 
 	mux := routes.Routes()
 
-	fs := http.FileServer(http.Dir("/assets/"))
+	fs := http.FileServer(http.Dir("frontend/assets/"))
 	mux.Handle("/assets/", http.StripPrefix("/assets/", fs))
 
 	addr := ":8080"
