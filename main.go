@@ -1,9 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
+	"github.com/djmcodechain/Portfolio/backend/db"
 	"github.com/djmcodechain/Portfolio/backend/logging"
 	"github.com/djmcodechain/Portfolio/backend/routes"
 )
@@ -13,6 +15,19 @@ import (
 // GitHub: https://github.com/djmcodechain/Portfolio
 func main() {
 	defer logging.Logger.Info("main() ~ called")
+
+	// Load the registry DB + run migrations
+	registry := db.InitDB("backend/db/core/djmcodechain.db")
+
+	// Load the domain DBs listed in the registry
+	domainDBs, err := db.LoadAllDatabases(registry)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println("Registry DB loaded:", registry)
+	fmt.Println("Domain DBs loaded:", domainDBs)
+
 	mux := routes.Routes()
 
 	fs := http.FileServer(http.Dir("/assets/"))
