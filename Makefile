@@ -12,7 +12,7 @@ APP_NAME := djmcodechain
 # 🧱 Paths
 # ─────────────────────────────────────────────
 GO_SRC := ./backend/cmd
-GO_BIN := ./bin/app
+GO_BIN := ./.bin/app
 GO_FILES := $(shell find . -type f -name '*.go' -not -path "./frontend/*")
 
 CSS_DIR := frontend/styles/partials
