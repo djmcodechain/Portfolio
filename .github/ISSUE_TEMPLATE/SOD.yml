@@ -1,37 +1,42 @@
-name: 📝 Start of Day (SOD)
-description: Daily work planning — context, priorities, and focus
+name: 🧑‍💻 Start of Dev Day (SOD)
+description: Daily dev planning — environment, repos, priorities, and goals
 title: "SOD: YYYY-MM-DD"
-labels: ["daily", "planning"]
+labels: ["daily", "development", "planning"]
 
 body:
   - type: markdown
     attributes:
       value: |
-        ## 🧠 Context
-        Provide a snapshot of your current state — mentally, physically, and environmentally.
+        ## 🧰 Environment & Setup
+        Quick snapshot of your current dev context before coding.
 
   - type: input
     id: start_time
     attributes:
       label: 🕘 Start Time
-      description: When are you starting?
+      description: When are you starting your shift?
       placeholder: e.g., 09:15
 
-  - type: textarea
-    id: mental_state
+  - type: input
+    id: working_dir
     attributes:
-      label: ☕ Current Focus / Mental State
-      description: What’s your mental/emotional focus as you start?
-      placeholder: e.g., Hyperfocused on CLI work; mild anxiety; coffee onboard.
-    validations:
-      required: false
+      label: 📁 Active Working Directory / Repo
+      description: Which project or repo are you focused on?
+      placeholder: e.g., djmcodechain/portfolio or djmOS/core
+
+  - type: input
+    id: branch
+    attributes:
+      label: 🌿 Active Branch
+      description: Which branch are you starting work on?
+      placeholder: e.g., feature/auth-refactor
 
   - type: textarea
-    id: physical_factors
+    id: build_state
     attributes:
-      label: 🌡️ Physical / External Factors
-      description: Sleep, pain, distractions, environment, etc.
-      placeholder: e.g., Slept 5h; sinus pain 6/10; neighbour noise overnight.
+      label: 🧠 Current Build Context
+      description: What’s the state of your project as of now?
+      placeholder: e.g., Migrations applied; pending API tests; frontend build stable.
     validations:
       required: false
 
@@ -39,13 +44,13 @@ body:
     attributes:
       value: |
         ## 🎯 Top Priorities for Today
-        List 2–4 key items. Keep it focused and achievable.
+        Identify your 2–4 key dev goals or tickets to tackle.
 
   - type: textarea
     id: top_priorities
     attributes:
       label: Top Priorities
-      description: Use the table or bullets — whatever’s fastest.
+      description: Keep it focused and achievable — what’s getting built or fixed today?
       placeholder: |
         | # | Task | Expected Outcome |
         |---|------|------------------|
@@ -65,7 +70,7 @@ body:
     id: related_issues
     attributes:
       label: Related Issues / PRs
-      description: Reference any related issues/PRs/discussions.
+      description: Reference related issues, PRs, or discussions for cross-linking.
       placeholder: "#123, #456"
     validations:
       required: false
@@ -73,33 +78,48 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## 📅 Planned Work Blocks (Optional)
-        Helps give structure to your day.
+        ## 🧩 Dependencies or Blockers
+        Note anything that could block progress — waiting on reviews, API changes, etc.
 
   - type: textarea
-    id: work_blocks
+    id: blockers
     attributes:
-      label: Planned Work Blocks
-      description: Timeboxing boosts focus; adjust as you go.
-      placeholder: |
-        | Time | Block Focus | Notes |
-        |------|-------------|-------|
-        | 10:00–11:30 |  |  |
-        | 12:00–14:00 |  |  |
-        | 15:00–17:00 |  |  |
+      label: Dependencies / Blockers
+      placeholder: e.g., Waiting on backend endpoint merge; npm package version mismatch.
     validations:
       required: false
 
   - type: markdown
     attributes:
       value: |
-        ## 🧭 General Notes
+        ## 📅 Planned Work Blocks
+        Plan your dev sprints or deep work sessions for the day.
+
+  - type: textarea
+    id: work_blocks
+    attributes:
+      label: Planned Work Blocks
+      description: Timebox your coding sessions to stay on track.
+      placeholder: |
+        | Time | Focus | Notes |
+        |------|--------|-------|
+        | 10:00–11:30 | Backend migrations | |
+        | 12:00–14:00 | Frontend integration | |
+        | 15:00–17:00 | Code review + refactor | |
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## ⚙️ Dev Notes / Intentions
+        Jot down environment setup notes, code quality goals, or build intentions.
 
   - type: textarea
     id: general_notes
     attributes:
-      label: General Notes
-      description: Environment setup, intentions, reminders, etc.
-      placeholder: e.g., Hydrate. Keep commits atomic. Ship something small early.
+      label: Dev Notes
+      description: Reminders, build commands, or habits to keep in mind.
+      placeholder: e.g., Keep commits atomic. Run migrations before push. Use `make dev-all`.
     validations:
       required: false
