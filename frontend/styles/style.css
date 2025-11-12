@@ -1,0 +1,69 @@
+@layer flexCentre {
+    .flex-centre {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: var(--p2);
+    }
+}@layer root, theme, layout, reset, flexCentre;@layer layout {
+
+    h1,
+    h2,
+    h3 {
+        color: var(--slate-blue);
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--accent-secondary);
+    }
+
+}@layer reset {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+}@layer root {
+    :root {
+
+        /* Backgrounds, Headers, Dark UI */
+        --primary: #000415;
+
+        /* Buttons, Focus, Rings, Icons, CTAs */
+        --accent-highlight: #FEE715;
+
+        /* Data highlights, link hovers */
+        --accent-secondary: #00FFC6;
+
+        /* Surface cards, modals, elevated backgrounds */
+        --steel-grey: #1C1F2B;
+
+        /* Secondary Text, Icons, Outlines */
+        --slate-blue: #4B4E6D;
+
+        /* Borders, Subtle Dividers */
+        --ghost-grey: #BFC2D5;
+
+        /* Main text on dark UI */
+        --pure-white: #FFFFFF;
+
+        /* Calmer tone */
+        --royal-blue: #0048FF;
+
+        --signal-error: #FF355E;
+    }
+}@layer layout {
+    body {
+
+        &[theme="darkMode"] {
+            background: var(--primary);
+            color: var(--pure-white);
+        }
+
+        &[theme="lightMode"] {
+            background: var(--pure-white);
+            color: var(--primary);
+        }
+    }
+}

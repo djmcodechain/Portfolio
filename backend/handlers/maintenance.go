@@ -10,7 +10,7 @@ import (
 	"github.com/djmcodechain/Portfolio/backend/logging"
 	"github.com/djmcodechain/Portfolio/backend/models"
 	"github.com/djmcodechain/Portfolio/backend/templates"
-	views "github.com/djmcodechain/Portfolio/backend/templates/views/main"
+	maintenance "github.com/djmcodechain/Portfolio/backend/templates/views/maintenance"
 )
 
 func MaintainenceHandler(w http.ResponseWriter, r *http.Request) {
@@ -29,7 +29,7 @@ func MaintainenceHandler(w http.ResponseWriter, r *http.Request) {
 		Description: meta.Description,
 		URL:         meta.Canonical,
 	}
-	body := views.MaintenanceBody()
+	body := maintenance.MaintenanceBody()
 	layout := templates.Layout(&meta, &ogTags, body)
 
 	if err := layout.Render(r.Context(), w); err != nil {
